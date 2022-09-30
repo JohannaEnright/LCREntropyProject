@@ -5,36 +5,8 @@ echo $1
 echo $2
 echo $3
 
-#if [[ $2 == "pro_dna" || $2 == "pro_cod" ]] ; then
-#for i in 12 15 20; do 
-#    for j in 1.7 1.9 2.1; do
-#        for k in 0.0 0.3 1.0; do
-#            CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
-#        done
-#    done
-#done
-#elif [[ $2 == "dna_pro" || $2 == "dna_cod" ]] ; then
-#for i in 21 45 60; do 
-#    for j in 1.0 1.3 1.7; do
-#        for k in 0.0 0.2 0.3; do
-#            CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
-#        done
-#    done
-#done
-#elif [[ $2 == "cod_dna" || $2 == "cod_pro" ]] ; then
-#for i in 12 15 20; do 
-#    for j in 2.1 2.5 2.9; do
-#        for k in 0.0 0.4 1.3; do
-#            CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
-#        done
-#    done
-#done
-#else
-#echo "error, put in proper direction"
-#fi
-
 if [[ $2 == "pro_dna" || $2 == "pro_cod" ]] ; then
-for i in 20; do 
+for i in 12 15 20; do 
     for j in 1.7 1.9 2.1; do
         for k in 0.0 0.3 1.0; do
             CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
@@ -42,7 +14,7 @@ for i in 20; do
     done
 done
 elif [[ $2 == "dna_pro" || $2 == "dna_cod" ]] ; then
-for i in 60; do 
+for i in 21 45 60; do 
     for j in 1.0 1.3 1.7; do
         for k in 0.0 0.2 0.3; do
             CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
@@ -50,7 +22,7 @@ for i in 60; do
     done
 done
 elif [[ $2 == "cod_dna" || $2 == "cod_pro" ]] ; then
-for i in 20; do 
+for i in 12 15 20; do 
     for j in 2.1 2.5 2.9; do
         for k in 0.0 0.4 1.3; do
             CombinedUsingSysCall_Codon3 $1 $2 $i $j $(echo $j+$k|bc) 2> $3$i$j$k
@@ -60,10 +32,9 @@ done
 else
 echo "error, put in proper direction"
 fi
-#echo $1+$2 | bc
 
 
-#"/scratch/Human/humanchrom_all"A
+#"/scratch/Human/humanchrom_all"
 #Human_Output/log/$i$j$k"
 
 #/scratch/d.melanogaster/d.melanogaster.gb_all
