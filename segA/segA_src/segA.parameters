@@ -1,0 +1,50 @@
+>SW-NSR1_YEAST 
+MAKTTKVKGNKKEVKASKQAKEEKAKAVSSSSSESSSSSSSSSESESESESESESSSSSS
+SSDSESSSSSSSDSESEAETKKEESKDSSSSSSDSSSDEEEEEEKEETKKEESKESSSSD
+SSSSSSSDSESEKEESNDKKRKSEDAEEEEDEESSNKKQKNEETEEPATIFVGRLSWSID
+DEWLKKEFEHIGGVIGARVIYERGTDRSRGYGYVDFENKSYAEKAIQEMQGKEIDGRPIN
+CDMSTSKPAGNNDRAKKFGDTPSEPSDTLFLGNLSFNADRDAIFELFAKHGEVVSVRIPT
+HPETEQPKGFGYVQFSNMEDAKKALDALQGEYIDNRPVRLDFSSPRPNNDGGRGGSRGFG
+GRGGGRGGNRGFGGRGGARGGRGGFRPSGSGANTAPLGRSRNTASFAGSKKTFD
+
+______________________________________________________________________
+
+segA yeast.fasta 10 1 1.3
+
+                                  1-28   MAKTTKVKGNKKEVKASKQAKEEKAKAV
+sssssesssssssssesesesesesessss   29-77   
+           ssssdsesssssssdsese
+                                 78-84   AETKKEE
+                skdssssssdsssd   85-98   
+                eeeeeekeetkkee   99-112  
+                                113-114  SK
+            essssdsssssssdsese  115-132  
+                                133-414  KEESNDKKRKSEDAEEEEDEESSNKKQKNE
+                                         ETEEPATIFVGRLSWSIDDEWLKKEFEHIG
+                                         GVIGARVIYERGTDRSRGYGYVDFENKSYA
+                                         EKAIQEMQGKEIDGRPINCDMSTSKPAGNN
+                                         DRAKKFGDTPSEPSDTLFLGNLSFNADRDA
+                                         IFELFAKHGEVVSVRIPTHPETEQPKGFGY
+                                         VQFSNMEDAKKALDALQGEYIDNRPVRLDF
+                                         SSPRPNNDGGRGGSRGFGGRGGGRGGNRGF
+                                         GGRGGARGGRGGFRPSGSGANTAPLGRSRN
+                                         TASFAGSKKTFD
+______________________________________________________________________
+segA yeast.fasta 20 1 1.3
+
+                                  1-28   MAKTTKVKGNKKEVKASKQAKEEKAKAV
+sssssesssssssssesesesesesessss   29-77   
+           ssssdsesssssssdsese
+                                 78-414  AETKKEESKDSSSSSSDSSSDEEEEEEKEE
+                                         TKKEESKESSSSDSSSSSSSDSESEKEESN
+                                         DKKRKSEDAEEEEDEESSNKKQKNEETEEP
+                                         ATIFVGRLSWSIDDEWLKKEFEHIGGVIGA
+                                         RVIYERGTDRSRGYGYVDFENKSYAEKAIQ
+                                         EMQGKEIDGRPINCDMSTSKPAGNNDRAKK
+                                         FGDTPSEPSDTLFLGNLSFNADRDAIFELF
+                                         AKHGEVVSVRIPTHPETEQPKGFGYVQFSN
+                                         MEDAKKALDALQGEYIDNRPVRLDFSSPRP
+                                         NNDGGRGGSRGFGGRGGGRGGNRGFGGRGG
+                                         ARGGRGGFRPSGSGANTAPLGRSRNTASFA
+                                         GSKKTFD
+______________________________________________________________________
