@@ -4,7 +4,7 @@ Results from the analysis are published in the Journal of Molecular Biology and 
 
 The main script components include:
 
-1. CombinedUsingSysCall_Codon3.py
+1. calculate_entropy_biological_lcrs.py
    This script was used to determine the entropies of LCRs from real biological sequences and requires the following inputs:
       i) a genbank file for a particular organism, which can be multiple genbank files for different chromosomes, concatenated together
       ii) the direction of comparison, which can be "pro_dna", "pro_cod", "dna_pro", "dna_cod", "cod_dna", or "cod_pro".
@@ -24,7 +24,7 @@ The main script components include:
 2. segA
    This script is a modified version of the original Seg algorithm created by Wootton and Federhen (1993). It has been modified to extend to longer LCR sequences than were previously capable of being handled by Seg. As well, it has an added alphabet to identify codon LCRs and deal with ambiguous letters. segA is called automatically in the CombinedUsingSysCall_Codon3.py script.
    
-3. GiveCombSysCallArgs.sh
+3. give_calc_bio_entropy_args.sh
    This is a bash file which is used to feed CombinedUsingSysCall_Codon3.py a combination of set parameters for segA. This was important to ensure that we were observing the same trends given slightly different LCR identifying parameters, considering the somewhat arbitrary nature of these parameters. In total, it will feed CombinedUsingSysCall_Codon3.py 27 unique parameter combinations as shown in the supplementary section of the publication (Enright, Dickson, & Golding, 2023).
    
 4. averageproteinlength.py
