@@ -27,22 +27,22 @@ The main script components include:
 3. give_calc_bio_entropy_args.sh
    This is a bash file which is used to feed calculate_entropy_biological_lcrs.py a combination of set parameters for segA. This was important to ensure that we were observing the same trends given slightly different LCR identifying parameters, considering the somewhat arbitrary nature of these parameters. In total, it will feed calculate_entropy_biological_lcrs.py 27 unique parameter combinations as shown in the supplementary section of the publication (Enright, Dickson, & Golding, 2023).
    
-4. averageproteinlength.py
+4. average_protein_length.py
    This script requires a genbank file as input, and will return the average protein length for that file.
    Again, it also accepts multiple concatenated genbank files, hence it was used to calculate the average protein length for each organism.
    This information was used in the generate_random_proteome.py script.
 
-5. codonclass_categorizeLCRs.py
+5. codon_class_categorize_lcrs.py
    This script requires the _Seq file outputed by calculate_entropy_biological_lcrs.py which contains the sequences of all of the detected LCRs for a given organism, and a file output location.
    It categorizes each LCR into one of three categories:
      i) containing three unique nucleotides, ii) containing two unique nucleotides, and iii) containing one unique nucleotide and outputs this information as counts of LCRs in each category.
    This information is used for the calculation of the preference coefficient, see Enright, Dickson, & Golding (2023).
    
-6. countcodontypes_allCDS.py
+6. count_codon_types_all_cds.py
    This script takes a genbank (or multiple) file as input. It outputs a text file with information for the total codons of each codon class summed for all sequences in a genome.
    This information is used for the calculation of the preference coefficient, see Enright, Dickson, & Golding (2023).
     
-7. generaterandomproteome.py
+7. generate_random_proteome.py
    This script is to simulate 100 000 sequences outputed in fasta file format. 
    The input values are the simulation type ('mutate' or 'random'), species ('sc', 'dm', 'hs', 'ce', 'at'), fasta file of sequences to mutate (only if you choose the 'mutate' option),
    write file (name of file to write to).
@@ -51,7 +51,7 @@ The main script components include:
    The 'mutate' simulation will add 1000 mutations to the sequences generated from the 'random' simulation.
    Only the 'mutate' simulation was used in the final publication to add 1000 synonomous mutations to create the 'Slip+CC+Syn' model.   
    
-8. improvedcodonclassLCRsimulation.py
+8. improved_codon_class_lcr_simulation.py
     It will simulate 100 000 LCR sequences using an increasing DNA polyermase slippage model that also takes into account the codonclass proportions (class 1,2 or 3).
     Codon class proportion biases are based off of precalculated preference coefficients for each species, see Enright, Dickson, & Golding (2023).
     This model is reffered to as the 'Slip+CC' model.
