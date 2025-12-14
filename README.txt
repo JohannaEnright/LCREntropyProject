@@ -22,18 +22,18 @@ The main script components include:
    Other plain text files are also outputed and include more information on the LCRs, information on proteins which did not contain LCRs (for counting/checking purposes), and information if the LCRs/genes were more atypical. For example, if the LCR was found in a gene which was located on both strands of the DNA, or if the LCR spanned an exon junction.
    
 2. segA
-   This script is a modified version of the original Seg algorithm created by Wootton and Federhen (1993). It has been modified to extend to longer LCR sequences than were previously capable of being handled by Seg. As well, it has an added alphabet to identify codon LCRs and deal with ambiguous letters. segA is called automatically in the CombinedUsingSysCall_Codon3.py script.
+   This script is a modified version of the original Seg algorithm created by Wootton and Federhen (1993). It has been modified to extend to longer LCR sequences than were previously capable of being handled by Seg. As well, it has an added alphabet to identify codon LCRs and deal with ambiguous letters. segA is called automatically in the calculate_entropy_biological_lcrs.py script.
    
 3. give_calc_bio_entropy_args.sh
-   This is a bash file which is used to feed CombinedUsingSysCall_Codon3.py a combination of set parameters for segA. This was important to ensure that we were observing the same trends given slightly different LCR identifying parameters, considering the somewhat arbitrary nature of these parameters. In total, it will feed CombinedUsingSysCall_Codon3.py 27 unique parameter combinations as shown in the supplementary section of the publication (Enright, Dickson, & Golding, 2023).
+   This is a bash file which is used to feed calculate_entropy_biological_lcrs.py a combination of set parameters for segA. This was important to ensure that we were observing the same trends given slightly different LCR identifying parameters, considering the somewhat arbitrary nature of these parameters. In total, it will feed calculate_entropy_biological_lcrs.py 27 unique parameter combinations as shown in the supplementary section of the publication (Enright, Dickson, & Golding, 2023).
    
 4. averageproteinlength.py
    This script requires a genbank file as input, and will return the average protein length for that file.
    Again, it also accepts multiple concatenated genbank files, hence it was used to calculate the average protein length for each organism.
-   This information was used in the generaterandomproteome script.
+   This information was used in the generate_random_proteome.py script.
 
 5. codonclass_categorizeLCRs.py
-   This script requires the _Seq file outputed by CombinedUsingSysCall_Codon3.py which contains the sequences of all of the detected LCRs for a given organism, and a file output location.
+   This script requires the _Seq file outputed by calculate_entropy_biological_lcrs.py which contains the sequences of all of the detected LCRs for a given organism, and a file output location.
    It categorizes each LCR into one of three categories:
      i) containing three unique nucleotides, ii) containing two unique nucleotides, and iii) containing one unique nucleotide and outputs this information as counts of LCRs in each category.
    This information is used for the calculation of the preference coefficient, see Enright, Dickson, & Golding (2023).
@@ -55,10 +55,10 @@ The main script components include:
     It will simulate 100 000 LCR sequences using an increasing DNA polyermase slippage model that also takes into account the codonclass proportions (class 1,2 or 3).
     Codon class proportion biases are based off of precalculated preference coefficients for each species, see Enright, Dickson, & Golding (2023).
     This model is reffered to as the 'Slip+CC' model.
-    The input requirements are a file of secies specific codon bias proportions Outputed by the nt_cod_aa_bias.py script and species type ('hs', 'sc', 'dm', 'at', 'ce').
+    The input requirements are a file of secies specific codon bias proportions Outputed by the nt_pro_cod_genome_bias.py script and species type ('hs', 'sc', 'dm', 'at', 'ce').
     It generates sequences using the average protein length, codon proportion, and preference coefficient for biological relevance.
   
-9. incslipsim_speciesspecific.py
+9. inc_slip_sim_species_specific.py
     This simulation generates 100 000 sequences protein and corresponding DNA sequences, outputed as a genbank file. It creates LCRs simulating the DNA polyermase slippage mechanism,
     where the probability of resampling the same codon increases with increasing number of repeats of that codon. Sequences are generated such that they include the same proportion of LCRs, the same protein length, and same codon bias as are biologically found in the organism.
     The script requires the inputs:
@@ -67,14 +67,14 @@ The main script components include:
       and 'mutate' adds 1000 random mutations to the third position of codons from the generated sequences (reffered to as 'Slip + Syn model' in the publication),
       using biologially relevant weights (5:1) for transition/tranversion mutations.
     ii) species ('hs', 'sc', 'dm', 'at', 'ce')
-    iii) file of codon proportions as generated from nt_pro_cod_genomebias.py
+    iii) file of codon proportions as generated from nt_pro_cod_genome_bias.py
 
-10. nt_pro_cod_genomebias
+10. nt_pro_cod_genome_bias.py
     This script takes a genbank file (or multiple concatenated) as input and outputs 4 files: each containing the nucleotide frequency, the nucleotide in coding sequence frequency, the codon frequency, and the amino acid frequency.
-    The codon frequency output was used for seqeunce simulations such as improvedcodonclassLCRsimulation.py and incslipsim_speciesspecific.py.
+    The codon frequency output was used for seqeunce simulations such as improved_codon_class_lcr_simulation.py and inc_slip_sim_species_specific.py.
     
-11. periodicityANDEntropy
-    This script requires a _Seq file outputed by CombinedUsingSysCall_Codon3.py containing the sequences of the detected biological LCRs and the sequence type, either 'protein' or 'dna'.
+11. periodicity_and_entropy.py
+    This script requires a _Seq file outputed by calculate_entropy_biological_lcrs.py containing the sequences of the detected biological LCRs and the sequence type, either 'protein' or 'dna'.
     Optional inputs include:
        i) wholeseq="True" or "False, which outputs either the entropies of only the repeat segments ("False") or the entropies of the entire LCR sequence ("True").
        ii) The lengths that each repeat has to be to be considered a repeat. For example, for mono-amino acid repeats, the releat size needed to be 4 (rep1p="4"), and the length of tri-nucleotide repeats needed to be 4 (rep3d="4").
